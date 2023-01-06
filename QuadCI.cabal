@@ -1,0 +1,151 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           QuadCI
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/QuadCI#readme>
+homepage:       https://github.com/githubuser/QuadCI#readme
+bug-reports:    https://github.com/githubuser/QuadCI/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/QuadCI
+
+library
+  exposed-modules:
+      Agent
+      Core
+      DockerLocal
+      JobHandler
+      JobHandler.Memory
+      Runner
+      Server
+  other-modules:
+      Paths_QuadCI
+  hs-source-dirs:
+      src
+  default-extensions:
+      BlockArguments
+      DeriveAnyClass
+      DeriveGeneric
+      LambdaCase
+      NoImplicitPrelude
+      OverloadedStrings
+      StrictData
+      NamedFieldPuns
+  ghc-options: -F -pgmF=record-dot-preprocessor -fprint-potential-instances
+  build-depends:
+      aeson
+    , async
+    , base
+    , butcher
+    , hslogger
+    , hspec
+    , http-client
+    , http-conduit
+    , http-types
+    , network
+    , process
+    , record-hasfield
+    , rio
+    , scotty
+    , serialise
+    , stm
+    , time
+    , typed-process
+    , wai-cors
+    , yaml
+  default-language: Haskell2010
+
+executable QuadCI-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_QuadCI
+  hs-source-dirs:
+      app
+  default-extensions:
+      BlockArguments
+      DeriveAnyClass
+      DeriveGeneric
+      LambdaCase
+      NoImplicitPrelude
+      OverloadedStrings
+      StrictData
+      NamedFieldPuns
+  ghc-options: -F -pgmF=record-dot-preprocessor -fprint-potential-instances -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuadCI
+    , aeson
+    , async
+    , base
+    , butcher
+    , hslogger
+    , hspec
+    , http-client
+    , http-conduit
+    , http-types
+    , network
+    , process
+    , record-hasfield
+    , rio
+    , scotty
+    , serialise
+    , stm
+    , time
+    , typed-process
+    , wai-cors
+    , yaml
+  default-language: Haskell2010
+
+test-suite QuadCI-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_QuadCI
+  hs-source-dirs:
+      test
+  default-extensions:
+      BlockArguments
+      DeriveAnyClass
+      DeriveGeneric
+      LambdaCase
+      NoImplicitPrelude
+      OverloadedStrings
+      StrictData
+      NamedFieldPuns
+  ghc-options: -F -pgmF=record-dot-preprocessor -fprint-potential-instances -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuadCI
+    , aeson
+    , async
+    , base
+    , butcher
+    , hslogger
+    , hspec
+    , http-client
+    , http-conduit
+    , http-types
+    , network
+    , process
+    , record-hasfield
+    , rio
+    , scotty
+    , serialise
+    , stm
+    , time
+    , typed-process
+    , wai-cors
+    , yaml
+  default-language: Haskell2010
