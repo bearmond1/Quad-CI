@@ -203,8 +203,12 @@ updateCollection state lastCollection collection =
        update step lastCollection CollectionFinished
       
       CollectionFinished -> CollectionFinished
-      
-      
+
+
+displayBuildNumber :: BuildNumber -> String
+displayBuildNumber number = "#" <> show (buildNumberToInt number)
+
+
 runCollection
   :: Docker.Service
   -> Time.POSIXTime

@@ -34,6 +34,7 @@ prepareBuild_ docker pipeline = do
 data Hooks
   = Hooks 
      { logCollected :: Log -> IO ()
+     , buildUpdated :: Build -> IO ()
      }
      
 runBuild_ :: Docker.Service -> Hooks -> Build -> IO Build
@@ -47,6 +48,7 @@ runBuild_ docker hooks build = do
       --traceShowIO logs
       traverse_ hooks.logCollected logs
       newBuild <- Core.progress docker build
+      hooks.buildUpdated newBuild
       case newBuild.state of
         BuildFinished _ ->
           pure newBuild

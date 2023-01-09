@@ -26,8 +26,10 @@ source-repository head
 library
   exposed-modules:
       Agent
+      Cli
       Core
       DockerLocal
+      Github
       JobHandler
       JobHandler.Memory
       Runner
